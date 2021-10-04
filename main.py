@@ -10,17 +10,17 @@ def main():
         if len(sys.argv) > 2:
             file_types =  sys.argv[2].split(" ")
             for index in range(0, len(file_types)):
-                file_types[index] = fr"*{file_types[index]}"
+                file_types[index] = fr"*.{file_types[index]}"
         else:
             file_types = ["*.wav", "*.mp3", "*.rx2", "*.asd", "*.mid", "*.ogg"]
-
+        print(file_types)
         find_sample(path, file_types)
     else:
-        print('Usage: python main.py path ".wav .mp3 .rx2 .wav.asd .mid .ogg"')
+        print('Usage: python main.py path "wav mp3 rx2 wav.asd mid ogg"')
     
 
 def edit_file_name(path, file):
-    word_emojis = {"bass": "🎸", "drum": "🥁", "perc": "🥁", "synth": "🎹", "melodic": "🎹", "vocal": "🎤", "acapella": "🎤"}
+    word_emojis = {"bass": "🎸", "guitar": "🎸", "sustain": "🎸", "reese": "🎸", "screech": "🎸", "guitar": "🎸", "drum": "🥁", "snare": "🥁", "kick": "🥁", "fill": "🥁", "perc": "🥁", "synth": "🎹", "melodic": "🎹", "vocal": "🎤", "acapella": "🎤"}
 
     for word in word_emojis:
         if word in file.lower():
